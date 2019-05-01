@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../../css/index.css">
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="../../js/jquery-3.4.0.min.js"></script>
+  <script src="../../js/publisher.js"></script>
 </head>
 
 <body>
@@ -60,50 +62,7 @@
               <th scope="col">Actions</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Donaldson</td>
-              <td>Fake PubAddr0</td>
-              <td>555-555-5550</td>
-              <td class="table_buttons">
-                <a class="edit" href="./adminPublishersEdit.html"
-                  title="Edit Publisher" data-toggle="tooltip">
-                  <i class="material-icons">edit</i>
-                </a>
-                <a class="delete" href="#" title="Delete Publisher" data-toggle="tooltip">
-                  <i class="material-icons">delete</i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>McGelon</td>
-              <td>Fake PubAddr1</td>
-              <td>555-555-5551</td>
-              <td class="table_buttons">
-                <a class="edit" href="#" title="Edit Publisher" data-toggle="tooltip">
-                  <i class="material-icons">edit</i>
-                </a>
-                <a class="delete" href="#" title="Delete Publisher" data-toggle="tooltip">
-                  <i class="material-icons">delete</i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Penguin</td>
-              <td>Fake PubAddr2</td>
-              <td>555-555-5552</td>
-              <td class="table_buttons">
-                <a class="edit" href="#" title="Edit Publisher" data-toggle="tooltip">
-                  <i class="material-icons">edit</i>
-                </a>
-                <a class="delete" href="#" title="Delete Publisher" data-toggle="tooltip">
-                  <i class="material-icons">delete</i>
-                </a>
-              </td>
-            </tr>
+          <tbody id="tableBody">
           </tbody>
         </table>
       </div>

@@ -1,9 +1,11 @@
+// create a user with the information below. If exists, then override that one
+// WARNING: this is not neccessary everytime the pages gets loaded
 var users = [{
   username: 'test',
   password: 's'
 }];
-window.localStorage.clear();
 window.localStorage.setItem('users', JSON.stringify(users));
+// window.localStorage.clear();
 
 function validateLogin() {
   var usernameHtml, passwordHtml, username, password, errorHtml;
