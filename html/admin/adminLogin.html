@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="../../css/index.css">
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/adminLogin.js"></script>
 </head>
 
 <body>
@@ -22,9 +23,14 @@
   <div class="login_main">
     <div class="login_form">
       <h1>Admin Login</h1>
-      <form action="adminDash.html">
-        <input type="text" placeholder="Enter your username...">
-        <input type="text" placeholder="Enter your password...">
+      <div style="display: none" class="form-group row">
+        <div id="error" class="col-sm-12"></div>
+      </div>
+      <form onsubmit="return validateLogin()" action="./adminDash.html">
+        <input id="username" type="text"
+          placeholder="Enter your username..." required />
+        <input id="password" type="password"
+          placeholder="Enter your password..." required />
         <button>Enter</button>
       </form>
     </div>
