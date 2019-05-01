@@ -7,35 +7,37 @@ $(document).ready(function() {
 });
 
 function editPublisher() {
-  try {
-    // try to see if this works
-    let stringId = JSON.parse(window.localStorage.getItem('editPublisher')).id;
-    let publisherId = parseInt(stringId, 10);
-    let name = $("#name").val();
-    let address = $("#address").val();
-    let phone = $("#phone").val();
+  if(validation()) {
+    try {
+      // try to see if this works
+      let stringId = JSON.parse(window.localStorage.getItem('editPublisher')).id;
+      let publisherId = parseInt(stringId, 10);
+      let name = $("#name").val();
+      let address = $("#address").val();
+      let phone = $("#phone").val();
 
-    // update Publisher
-    let publishers = JSON.parse(window.localStorage.getItem('publishers'));
-    for(publisher of publishers) {
-      if(publisher.id === publisherId) {
-        if(name) {
-          publisher.name = name;
-        }
-        if(address) {
-          publisher.address = address;
-        }
-        if(phone) {
-          publisher.phone = phone;
+      // update Publisher
+      let publishers = JSON.parse(window.localStorage.getItem('publishers'));
+      for(publisher of publishers) {
+        if(publisher.id === publisherId) {
+          if(name) {
+            publisher.name = name;
+          }
+          if(address) {
+            publisher.address = address;
+          }
+          if(phone) {
+            publisher.phone = phone;
+          }
         }
       }
-    }
-    // save updated publishers
-    window.localStorage.setItem('publishers', JSON.stringify(publishers));
+      // save updated publishers
+      window.localStorage.setItem('publishers', JSON.stringify(publishers));
 
-    // now return the the publisher table page
-    window.location.href = "adminPublishers.html";
-  } catch(err) {
-    alert("sorry something went wrong with our system");
+      // now return the the publisher table page
+      window.location.href = "adminPublishers.html";
+    } catch(err) {
+      alert("sorry something went wrong with our system");
+    }
   }
 }
