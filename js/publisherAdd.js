@@ -6,28 +6,8 @@ function Publisher(id, name, address, phone) {
 }
   
 function publisherAddValidation() {
-  var listOfInputElements, listLength, i, errorHtml, validation;
-  validation = true;
-  listOfInputElements = document.getElementsByTagName("input");
-  listLength = listOfInputElements.length;
-  for(i = 0; i < listLength; i++) {
-    let publisher = listOfInputElements[i];
-    if(publisher.checkValidity()) {
-      console.log('You are good for ' + publisher.name);
-      validation = validation && true;
-      // reverse the effect of the error message
-      errorHtml = document.getElementById(publisher.id + "Error");
-      errorHtml.parentElement.style.display = "none";
-      errorHtml.innerHTML = "";
-    } else {
-      validation = validation && false;
-      errorHtml = document.getElementById(publisher.id + "Error");
-      errorHtml.parentElement.style.display = "flex";
-      errorHtml.innerHTML = publisher.validationMessage;
-    }
-  }
-
-  if(validation) {
+  // validation() from validation.js
+  if(validation()) {
     // get publisher from the localStorage
     let publishers = JSON.parse(window.localStorage.getItem('publishers'));
 
