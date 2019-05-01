@@ -1,3 +1,11 @@
+$(document).ready(function() {
+  // load the data in editPublisher
+  let publisher = JSON.parse(window.localStorage.getItem('editPublisher'));
+  $('#name').val(publisher.name);
+  $('#address').val(publisher.address);
+  $('#phone').val(publisher.phone);
+});
+
 function editPublisher() {
   try {
     // try to see if this works

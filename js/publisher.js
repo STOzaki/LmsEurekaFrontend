@@ -36,9 +36,22 @@ function editPublisher(currentObj) {
 
   // grabs the id of the current tr this is in
   let currentId = currentObj.parentElement.parentElement.children[0].innerHTML;
-  window.localStorage.setItem('editPublisher', JSON.stringify({
-    id: currentId
-  }));
+  let id = parseInt(currentId, 10);
+
+  // get and save publisher
+  let publishers = JSON.parse(window.localStorage.getItem('publishers'));
+  for(const publisher of publishers) {
+    if(publisher.id === id) {
+      // found the right publisher
+      console.log("Found the right publisher: " + publisher);
+      // save the right publisher
+      window.localStorage.setItem('editPublisher', JSON.stringify(publisher));
+    }
+  }
+
+  // window.localStorage.setItem('editPublisher', JSON.stringify({
+  //   id: currentId
+  // }));
 }
 
 function deletePublisher(currentObj) {
