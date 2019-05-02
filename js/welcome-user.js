@@ -4,4 +4,5 @@ $(document).ready(function() {
     console.log(currentUser.username);
     $("#welcome").html("Welcome " + currentUser.username);
   }
+  $("#welcome").fadeIn(1400);
 });
