@@ -10,7 +10,8 @@ function editPublisher() {
   if(validation()) {
     try {
       // try to see if this works
-      let stringId = JSON.parse(window.localStorage.getItem('editPublisher')).id;
+      let stringId = JSON.parse(window.localStorage.getItem('editPublisher'))
+        .id;
       let publisherId = parseInt(stringId, 10);
       let name = $("#name").val();
       let address = $("#address").val();
