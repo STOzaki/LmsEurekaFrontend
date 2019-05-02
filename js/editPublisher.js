@@ -20,6 +20,11 @@ function editPublisher() {
       let publishers = JSON.parse(window.localStorage.getItem('publishers'));
       for(publisher of publishers) {
         if(publisher.id === publisherId) {
+          /* This was to practice truthy,
+            I would normally remove these if statements since the forms auto
+            fill with the current information associated with that
+            publisher
+          */
           if(name) {
             publisher.name = name;
           }
